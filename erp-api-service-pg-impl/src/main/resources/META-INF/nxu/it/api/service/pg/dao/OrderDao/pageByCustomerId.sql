@@ -11,11 +11,8 @@ WHERE
     /*%if startDate != null || endDate != null */
     AND tor.order_date BETWEEN /* startDate */'2019-07-03 10:08:00.000000' AND /* endDate */'2022-12-01 00:00:01.000000'
     /*%end*/
-    /*%if @isNotBlank(customerName) */
-    AND tor.customer_id IN (SELECT id FROM t_customer tc WHERE tc.contact LIKE '%' || /* customerName */'吴' || '%')
-    /*%end*/
     /*%if @isNotBlank(shipperName) */
-    AND tor.shipper_id IN (SELECT id FROM t_shipper ts WHERE ts.name LIKE '%' || /* shipperName */'顺丰' || '%')
+    AND tsh.name ILIKE '%' || /* shipperName */'速' || '%'
     /*%end*/
     /*%if @isNotBlank(shipProvince) */
     AND tor.ship_province ILIKE '%' || /* shipProvince */'吉林' || '%'
@@ -25,4 +22,7 @@ WHERE
     /*%end*/
     /*%if @isNotBlank(shipRegion) */
     AND tor.ship_region ILIKE '%' || /* shipRegion */'华' || '%'
+    /*%end*/
+    /*%if @isNotBlank(employeeName) */
+    AND tem.name ILIKE '%' || /* employeeName */'郑康伟业' || '%'
     /*%end*/

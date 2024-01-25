@@ -8,20 +8,23 @@ FROM t_order tor
          left join t_shipper tsh on tor.shipper_id = tsh.id
 WHERE
     /*%if startDate != null || endDate != null */
-    tor.order_date BETWEEN /* startDate */'2019-07-03 10:08:00.000000' AND /* endDate */'2022-12-01 00:00:01.000000'
+    tor.order_date BETWEEN /* startDate */'2019-07-03 10:08:00.000000' AND /* endDate */'2021-12-01 00:00:01.000000'
     /*%end*/
     /*%if @isNotBlank(customerName) */
-    AND tor.customer_id IN (SELECT id FROM t_customer tc WHERE tc.contact LIKE '%' || /* customerName */'吴' || '%')
+    AND tcu.name ILIKE '%' || /* customerName */'商贸' || '%'
     /*%end*/
     /*%if @isNotBlank(shipperName) */
-    AND tor.shipper_id IN (SELECT id FROM t_shipper ts WHERE ts.name LIKE '%' || /* shipperName */'顺丰' || '%')
+    AND tsh.name ILIKE '%' || /* shipperName */'速' || '%'
     /*%end*/
     /*%if @isNotBlank(shipProvince) */
-    AND tor.ship_province ILIKE '%' || /* shipProvince */'广' || '%'
+    AND tor.ship_province ILIKE '%' || /* shipProvince */'广东' || '%'
     /*%end*/
     /*%if @isNotBlank(shipCity) */
     AND tor.ship_city ILIKE '%' || /* shipCity */'北' || '%'
     /*%end*/
     /*%if @isNotBlank(shipRegion) */
     AND tor.ship_region ILIKE '%' || /* shipRegion */'华' || '%'
+    /*%end*/
+    /*%if @isNotBlank(employeeName) */
+    AND tem.name ILIKE '%' || /* employeeName */'王良伟' || '%'
     /*%end*/

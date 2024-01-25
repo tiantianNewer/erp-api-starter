@@ -6,5 +6,4 @@ FROM t_order tor
     left join t_customer tcu on tor.customer_id = tcu.id
     left join t_employee tem on tor.employee_id = tem.id
     left join t_shipper tsh on tor.shipper_id = tsh.id
--- WHERE tor.id = /* orderId */'201907030001'
 WHERE tor.id = /* orderId */'202001190001'

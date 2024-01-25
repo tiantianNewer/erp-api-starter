@@ -1,5 +1,7 @@
 package nxu.it.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -12,8 +14,11 @@ public class Order {
     protected String employee_id;
     protected String employee_name;
     protected String employee_phone;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     protected LocalDateTime order_date;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     protected LocalDateTime ship_date;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     protected LocalDateTime arrival_date;
     protected Float freight;
     protected Integer shipper_id;

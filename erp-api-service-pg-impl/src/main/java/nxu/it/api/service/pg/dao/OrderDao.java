@@ -15,11 +15,11 @@ public interface OrderDao {
     @Select
     List<OrderDetailEntity> findDetailByOrderId(String orderId);
     @Select
-    List<OrderEntity> page(LocalDateTime startDate, LocalDateTime endDate, String customerName, String shipperName, String shipProvince, String shipCity, String shipRegion);
+    List<OrderEntity> page(LocalDateTime startDate, LocalDateTime endDate, String customerName, String shipperName, String shipProvince, String shipCity, String shipRegion, String employeeName);
     @Select
-    List<OrderEntity> pageByEmployeeId(String employeeId, LocalDateTime startDate, LocalDateTime endDate, String customerName, String shipperName, String shipProvince, String shipCity, String shipRegion);
+    List<OrderEntity> pageByEmployeeId(String employeeId, LocalDateTime startDate, LocalDateTime endDate, String customerName,String shipperName, String shipProvince, String shipCity, String shipRegion);
     @Select
-    List<OrderEntity> pageByCustomerId(Integer customerId, LocalDateTime startDate, LocalDateTime endDate, String customerName, String shipperName, String shipProvince, String shipCity, String shipRegion);
+    List<OrderEntity> pageByCustomerId(Integer customerId, LocalDateTime startDate, LocalDateTime endDate, String shipperName, String shipProvince, String shipCity, String shipRegion, String employeeName);
     @Select
-    List<OrderEntity> pageByShipperId(Integer shipperId, LocalDateTime startDate, LocalDateTime endDate, String customerName, String shipperName, String shipProvince, String shipCity, String shipRegion);
+    List<OrderEntity> pageByShipperId(Integer shipperId, LocalDateTime startDate, LocalDateTime endDate, String customerName, String shipProvince, String shipCity, String shipRegion, String employeeName);
 }

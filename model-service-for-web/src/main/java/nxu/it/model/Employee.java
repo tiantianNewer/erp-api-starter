@@ -1,11 +1,15 @@
 package nxu.it.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.time.LocalDate;
 
 public class Employee {
     protected String id;
     protected String name;
+    @JsonFormat(pattern = "yyyy-MM-dd")
     protected LocalDate birth_date;
+    @JsonFormat(pattern = "yyyy-MM-dd")
     protected LocalDate hire_date;
     protected String title;
     protected String region;

@@ -49,8 +49,8 @@ public class OrderServicePgImpl implements OrderService {
         if (endDate == null) {
             endDate = LocalDateTime.of(LocalDate.of(2022, 1, 1), LocalTime.of(0, 0, 0));
         }
-        List<OrderEntity> orderEntityList = orderDao.page(startDate, endDate, orderPageQueryParam.getCustomerName(),
-                orderPageQueryParam.getShipperName(), orderPageQueryParam.getShipProvince(), orderPageQueryParam.getShipCity(), orderPageQueryParam.getShipRegion());
+        List<OrderEntity> orderEntityList = orderDao.page(startDate, endDate, orderPageQueryParam.getCustomerName(), orderPageQueryParam.getShipperName(),
+                orderPageQueryParam.getShipProvince(), orderPageQueryParam.getShipCity(), orderPageQueryParam.getShipRegion(), orderPageQueryParam.getEmployeeName());
         List<Order> orderList = orderMapper.toOrderList(orderEntityList);
 
         int totalRow = orderList.size();
@@ -78,8 +78,8 @@ public class OrderServicePgImpl implements OrderService {
         if (endDate == null) {
             endDate = LocalDateTime.of(LocalDate.of(2022, 1, 1), LocalTime.of(0, 0, 0));
         }
-        List<OrderEntity> orderEntityList = orderDao.pageByEmployeeId(employeeId ,startDate, endDate, orderPageQueryParam.getCustomerName(),
-                orderPageQueryParam.getShipperName(), orderPageQueryParam.getShipProvince(), orderPageQueryParam.getShipCity(), orderPageQueryParam.getShipRegion());
+        List<OrderEntity> orderEntityList = orderDao.pageByEmployeeId(employeeId ,startDate, endDate, orderPageQueryParam.getCustomerName(), orderPageQueryParam.getShipperName(),
+                orderPageQueryParam.getShipProvince(), orderPageQueryParam.getShipCity(), orderPageQueryParam.getShipRegion());
         List<Order> orderList = orderMapper.toOrderList(orderEntityList);
 
         int totalRow = orderList.size();
@@ -107,8 +107,8 @@ public class OrderServicePgImpl implements OrderService {
         if (endDate == null) {
             endDate = LocalDateTime.of(LocalDate.of(2022, 1, 1), LocalTime.of(0, 0, 0));
         }
-        List<OrderEntity> orderEntityList = orderDao.pageByCustomerId(customerId, startDate, endDate, orderPageQueryParam.getCustomerName(),
-                orderPageQueryParam.getShipperName(), orderPageQueryParam.getShipProvince(), orderPageQueryParam.getShipCity(), orderPageQueryParam.getShipRegion());
+        List<OrderEntity> orderEntityList = orderDao.pageByCustomerId(customerId, startDate, endDate, orderPageQueryParam.getShipperName(),
+                orderPageQueryParam.getShipProvince(), orderPageQueryParam.getShipCity(), orderPageQueryParam.getShipRegion(), orderPageQueryParam.getEmployeeName());
         List<Order> orderList = orderMapper.toOrderList(orderEntityList);
 
         int totalRow = orderList.size();
@@ -137,7 +137,7 @@ public class OrderServicePgImpl implements OrderService {
             endDate = LocalDateTime.of(LocalDate.of(2022, 1, 1), LocalTime.of(0, 0, 0));
         }
         List<OrderEntity> orderEntityList = orderDao.pageByShipperId(shipperId, startDate, endDate, orderPageQueryParam.getCustomerName(),
-                orderPageQueryParam.getShipperName(), orderPageQueryParam.getShipProvince(), orderPageQueryParam.getShipCity(), orderPageQueryParam.getShipRegion());
+                orderPageQueryParam.getShipProvince(), orderPageQueryParam.getShipCity(), orderPageQueryParam.getShipRegion(), orderPageQueryParam.getEmployeeName());
         List<Order> orderList = orderMapper.toOrderList(orderEntityList);
 
         int totalRow = orderList.size();

@@ -16,6 +16,7 @@ public class OrderPageQueryParam extends PageQueryParam {
     String shipProvince;
     String shipCity;
     String shipRegion;
+    String employeeName;
 
     public LocalDateTime getStartDate() {
         return startDate;
@@ -71,5 +72,13 @@ public class OrderPageQueryParam extends PageQueryParam {
 
     public void setShipRegion(String shipRegion) {
         this.shipRegion = shipRegion;
+    }
+
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
     }
 }

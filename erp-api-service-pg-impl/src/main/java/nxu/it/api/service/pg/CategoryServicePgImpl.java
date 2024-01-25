@@ -24,10 +24,7 @@ public class CategoryServicePgImpl implements CategoryService {
         ListIterator<Category> categoryListIterator = categoryList.listIterator();
         while (categoryListIterator.hasNext()) {
             Category category = categoryListIterator.next();
-            if (level == 3) {
-                category.setId2(category.getId3().substring(0,4));
-            } else if (level == 2) {
-                category.setId1(category.getId3().substring(0,2));
+            if (level == 2) {
                 category.setId2(category.getId3());
                 category.setId3(null);
                 category.setName2(category.getName3());
