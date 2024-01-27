@@ -7,7 +7,7 @@ public class Category {
     protected String name2;
     protected String id1;
     protected String name1;
-    protected String parent_id;
+    protected String parentId;
     protected Short level;
 
     public Category() {
@@ -61,12 +61,12 @@ public class Category {
         this.name1 = name1;
     }
 
-    public String getParent_id() {
-        return parent_id;
+    public String getParentId() {
+        return parentId;
     }
 
-    public void setParent_id(String parent_id) {
-        this.parent_id = parent_id;
+    public void setParentId(String parentId) {
+        this.parentId = parentId;
     }
 
     public Short getLevel() {
@@ -86,7 +86,7 @@ public class Category {
                 ", name2='" + name2 + '\'' +
                 ", id1='" + id1 + '\'' +
                 ", name1='" + name1 + '\'' +
-                ", parent_id='" + parent_id + '\'' +
+                ", parentId='" + parentId + '\'' +
                 ", level=" + level +
                 '}';
     }

@@ -1,30 +1,29 @@
 package nxu.it.api.service.pg.entity;
 
 import org.seasar.doma.Entity;
-import org.seasar.doma.Metamodel;
 import org.seasar.doma.jdbc.entity.NamingType;
 
-@Entity(naming = NamingType.SNAKE_LOWER_CASE, metamodel = @Metamodel)
+@Entity(naming = NamingType.SNAKE_LOWER_CASE)
 public class ProductEntity {
     protected Integer id;
     protected String brand;
     protected String name;
-    protected String bar_code;
-    protected String quantity_per_unit;
-    protected Float unit_price;
-    protected Long units_in_stock;
-    protected Integer units_sell;
-    protected String photo_url;
-    protected Integer purchase_unit_price;
-    protected Integer purchase_amount;
-    protected Long supplier_id;
-    protected String supplier_name;
-    protected String category_id1;
-    protected String category_name1;
-    protected String category_id2;
-    protected String category_name2;
-    protected String category_id3;
-    protected String category_name3;
+    protected String barCode;
+    protected String quantityPerUnit;
+    protected Float unitPrice;
+    protected Long unitsInStock;
+    protected Integer unitsSell;
+    protected String photoUrl;
+    protected Integer purchaseUnitPrice;
+    protected Integer purchaseAmount;
+    protected Long supplierId;
+    protected String supplierName;
+    protected String categoryId1;
+    protected String categoryName1;
+    protected String categoryId2;
+    protected String categoryName2;
+    protected String categoryId3;
+    protected String categoryName3;
 
     public Integer getId() {
         return id;
@@ -50,131 +49,131 @@ public class ProductEntity {
         this.name = name;
     }
 
-    public String getBar_code() {
-        return bar_code;
+    public String getBarCode() {
+        return barCode;
     }
 
-    public void setBar_code(String bar_code) {
-        this.bar_code = bar_code;
+    public void setBarCode(String barCode) {
+        this.barCode = barCode;
     }
 
     public String getQuantity_per_unit() {
-        return quantity_per_unit;
+        return quantityPerUnit;
     }
 
     public void setQuantity_per_unit(String quantity_per_unit) {
-        this.quantity_per_unit = quantity_per_unit;
+        this.quantityPerUnit = quantity_per_unit;
     }
 
-    public Float getUnit_price() {
-        return unit_price;
+    public Float getUnitPrice() {
+        return unitPrice;
     }
 
-    public void setUnit_price(Float unit_price) {
-        this.unit_price = unit_price;
+    public void setUnitPrice(Float unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
-    public Long getUnits_in_stock() {
-        return units_in_stock;
+    public Long getUnitsInStock() {
+        return unitsInStock;
     }
 
-    public void setUnits_in_stock(Long units_in_stock) {
-        this.units_in_stock = units_in_stock;
+    public void setUnitsInStock(Long unitsInStock) {
+        this.unitsInStock = unitsInStock;
     }
 
-    public Integer getUnits_sell() {
-        return units_sell;
+    public Integer getUnitsSell() {
+        return unitsSell;
     }
 
-    public void setUnits_sell(Integer units_sell) {
-        this.units_sell = units_sell;
+    public void setUnitsSell(Integer unitsSell) {
+        this.unitsSell = unitsSell;
     }
 
-    public String getPhoto_url() {
-        return photo_url;
+    public String getPhotoUrl() {
+        return photoUrl;
     }
 
-    public void setPhoto_url(String photo_url) {
-        this.photo_url = photo_url;
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
     }
 
-    public Integer getPurchase_unit_price() {
-        return purchase_unit_price;
+    public Integer getPurchaseUnitPrice() {
+        return purchaseUnitPrice;
     }
 
-    public void setPurchase_unit_price(Integer purchase_unit_price) {
-        this.purchase_unit_price = purchase_unit_price;
+    public void setPurchaseUnitPrice(Integer purchaseUnitPrice) {
+        this.purchaseUnitPrice = purchaseUnitPrice;
     }
 
-    public Integer getPurchase_amount() {
-        return purchase_amount;
+    public Integer getPurchaseAmount() {
+        return purchaseAmount;
     }
 
-    public void setPurchase_amount(Integer purchase_amount) {
-        this.purchase_amount = purchase_amount;
+    public void setPurchaseAmount(Integer purchaseAmount) {
+        this.purchaseAmount = purchaseAmount;
     }
 
-    public Long getSupplier_id() {
-        return supplier_id;
+    public Long getSupplierId() {
+        return supplierId;
     }
 
-    public void setSupplier_id(Long supplier_id) {
-        this.supplier_id = supplier_id;
+    public void setSupplierId(Long supplierId) {
+        this.supplierId = supplierId;
     }
 
-    public String getSupplier_name() {
-        return supplier_name;
+    public String getSupplierName() {
+        return supplierName;
     }
 
-    public void setSupplier_name(String supplier_name) {
-        this.supplier_name = supplier_name;
+    public void setSupplierName(String supplierName) {
+        this.supplierName = supplierName;
     }
 
-    public String getCategory_id1() {
-        return category_id1;
+    public String getCategoryId1() {
+        return categoryId1;
     }
 
-    public void setCategory_id1(String category_id1) {
-        this.category_id1 = category_id1;
+    public void setCategoryId1(String categoryId1) {
+        this.categoryId1 = categoryId1;
     }
 
-    public String getCategory_name1() {
-        return category_name1;
+    public String getCategoryName1() {
+        return categoryName1;
     }
 
-    public void setCategory_name1(String category_name1) {
-        this.category_name1 = category_name1;
+    public void setCategoryName1(String categoryName1) {
+        this.categoryName1 = categoryName1;
     }
 
-    public String getCategory_id2() {
-        return category_id2;
+    public String getCategoryId2() {
+        return categoryId2;
     }
 
-    public void setCategory_id2(String category_id2) {
-        this.category_id2 = category_id2;
+    public void setCategoryId2(String categoryId2) {
+        this.categoryId2 = categoryId2;
     }
 
-    public String getCategory_name2() {
-        return category_name2;
+    public String getCategoryName2() {
+        return categoryName2;
     }
 
-    public void setCategory_name2(String category_name2) {
-        this.category_name2 = category_name2;
+    public void setCategoryName2(String categoryName2) {
+        this.categoryName2 = categoryName2;
     }
 
-    public String getCategory_id3() {
-        return category_id3;
+    public String getCategoryId3() {
+        return categoryId3;
     }
 
-    public void setCategory_id3(String category_id3) {
-        this.category_id3 = category_id3;
+    public void setCategoryId3(String categoryId3) {
+        this.categoryId3 = categoryId3;
     }
 
-    public String getCategory_name3() {
-        return category_name3;
+    public String getCategoryName3() {
+        return categoryName3;
     }
 
-    public void setCategory_name3(String category_name3) {
-        this.category_name3 = category_name3;
+    public void setCategoryName3(String categoryName3) {
+        this.categoryName3 = categoryName3;
     }
 }

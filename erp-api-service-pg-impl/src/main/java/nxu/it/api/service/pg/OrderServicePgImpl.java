@@ -34,8 +34,8 @@ public class OrderServicePgImpl implements OrderService {
         }
         Order order = orderMapper.toOrder(orderEntity);
         List<OrderDetail> orderDetailList = orderMapper.toOrderDetailList(orderDao.findDetailByOrderId(id));
-        order.setDetail_list(orderDetailList);
-        order.setTotal_price(orderDetailList.stream().mapToDouble(OrderDetail::getTotal_price).sum());
+        order.setDetailList(orderDetailList);
+        order.setTotalPrice(orderDetailList.stream().mapToDouble(OrderDetail::getTotalPrice).sum());
         return Optional.of(order);
     }
 

@@ -14,8 +14,8 @@ public class EmployeeEntity {
     @Id
     protected String id;
     protected String name;
-    protected LocalDate birth_date;
-    protected LocalDate hire_date;
+    protected LocalDate birthDate;
+    protected LocalDate hireDate;
     protected String title;
     protected String region;
     protected String phone;
@@ -44,20 +44,20 @@ public class EmployeeEntity {
         this.title = title;
     }
 
-    public LocalDate getBirth_date() {
-        return birth_date;
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirth_date(LocalDate birth_date) {
-        this.birth_date = birth_date;
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
     }
 
-    public LocalDate getHire_date() {
-        return hire_date;
+    public LocalDate getHireDate() {
+        return hireDate;
     }
 
-    public void setHire_date(LocalDate hire_date) {
-        this.hire_date = hire_date;
+    public void setHireDate(LocalDate hireDate) {
+        this.hireDate = hireDate;
     }
 
     public String getRegion() {

@@ -1,32 +1,32 @@
 package nxu.it.model;
 
 public class OrderDetail {
-    protected Float unit_price;
-    protected Float actual_unit_price;
+    protected Float unitPrice;
+    protected Float actualUnitPrice;
     protected Integer quantity;
     protected Float discount;
-    protected Double total_price;
-    protected Integer product_id;
-    protected String product_name;
-    protected String product_quantity_per_unit;
+    protected Double totalPrice;
+    protected Integer productId;
+    protected String productName;
+    protected String productQuantityPerUnit;
 
     public OrderDetail() {
     }
 
-    public Float getUnit_price() {
-        return unit_price;
+    public Float getUnitPrice() {
+        return unitPrice;
     }
 
-    public void setUnit_price(Float unit_price) {
-        this.unit_price = unit_price;
+    public void setUnitPrice(Float unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
-    public Float getActual_unit_price() {
-        return actual_unit_price;
+    public Float getActualUnitPrice() {
+        return actualUnitPrice;
     }
 
-    public void setActual_unit_price(Float actual_unit_price) {
-        this.actual_unit_price = actual_unit_price;
+    public void setActualUnitPrice(Float actualUnitPrice) {
+        this.actualUnitPrice = actualUnitPrice;
     }
 
     public Integer getQuantity() {
@@ -45,49 +45,49 @@ public class OrderDetail {
         this.discount = discount;
     }
 
-    public Double getTotal_price() {
-        return total_price;
+    public Double getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setTotal_price(Double total_price) {
-        this.total_price = total_price;
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
-    public Integer getProduct_id() {
-        return product_id;
+    public Integer getProductId() {
+        return productId;
     }
 
-    public void setProduct_id(Integer product_id) {
-        this.product_id = product_id;
+    public void setProductId(Integer productId) {
+        this.productId = productId;
     }
 
-    public String getProduct_name() {
-        return product_name;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProduct_name(String product_name) {
-        this.product_name = product_name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public String getProduct_quantity_per_unit() {
-        return product_quantity_per_unit;
+    public String getProductQuantityPerUnit() {
+        return productQuantityPerUnit;
     }
 
-    public void setProduct_quantity_per_unit(String product_quantity_per_unit) {
-        this.product_quantity_per_unit = product_quantity_per_unit;
+    public void setProductQuantityPerUnit(String productQuantityPerUnit) {
+        this.productQuantityPerUnit = productQuantityPerUnit;
     }
 
     @Override
     public String toString() {
         return "OrderDetail{" +
-                "unit_price=" + unit_price +
-                ", actual_unit_price=" + actual_unit_price +
+                "unitPrice=" + unitPrice +
+                ", actualUnitPrice=" + actualUnitPrice +
                 ", quantity=" + quantity +
                 ", discount=" + discount +
-                ", total_price=" + total_price +
-                ", product_id=" + product_id +
-                ", product_name='" + product_name + '\'' +
-                ", product_quantity_per_unit='" + product_quantity_per_unit + '\'' +
+                ", totalPrice=" + totalPrice +
+                ", productId=" + productId +
+                ", productName='" + productName + '\'' +
+                ", productQuantityPerUnit='" + productQuantityPerUnit + '\'' +
                 '}';
     }
 }

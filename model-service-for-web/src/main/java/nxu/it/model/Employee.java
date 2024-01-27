@@ -8,9 +8,9 @@ public class Employee {
     protected String id;
     protected String name;
     @JsonFormat(pattern = "yyyy-MM-dd")
-    protected LocalDate birth_date;
+    protected LocalDate birthDate;
     @JsonFormat(pattern = "yyyy-MM-dd")
-    protected LocalDate hire_date;
+    protected LocalDate hireDate;
     protected String title;
     protected String region;
     protected String phone;
@@ -34,20 +34,20 @@ public class Employee {
         this.name = name;
     }
 
-    public LocalDate getBirth_date() {
-        return birth_date;
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirth_date(LocalDate birth_date) {
-        this.birth_date = birth_date;
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
     }
 
-    public LocalDate getHire_date() {
-        return hire_date;
+    public LocalDate getHireDate() {
+        return hireDate;
     }
 
-    public void setHire_date(LocalDate hire_date) {
-        this.hire_date = hire_date;
+    public void setHireDate(LocalDate hireDate) {
+        this.hireDate = hireDate;
     }
 
     public String getTitle() {
@@ -79,8 +79,8 @@ public class Employee {
         return "Employee{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", birth_date=" + birth_date +
-                ", hire_date=" + hire_date +
+                ", birthDate=" + birthDate +
+                ", hireDate=" + hireDate +
                 ", title='" + title + '\'' +
                 ", region='" + region + '\'' +
                 ", phone='" + phone + '\'' +

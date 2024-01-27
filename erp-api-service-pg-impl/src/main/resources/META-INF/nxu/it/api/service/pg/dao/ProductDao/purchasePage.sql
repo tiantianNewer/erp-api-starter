@@ -1,5 +1,5 @@
 SELECT tpr.id, tpr.name, tpr.quantity_per_unit,
-       tpu.purchase_unit_price, tpu.amount AS purchase_amount,
+       tpu.purchase_unit_price AS purchase_unit_price, tpu.amount AS purchase_amount,
        tsu.id AS supplier_id, tsu.name AS supplier_name
 FROM t_purchase tpu
     left join t_product tpr on tpu.product_id = tpr.id

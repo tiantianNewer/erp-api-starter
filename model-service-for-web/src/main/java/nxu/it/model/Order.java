@@ -7,30 +7,30 @@ import java.util.List;
 
 public class Order {
     protected String id;
-    protected Integer customer_id;
-    protected String customer_name;
-    protected String customer_contact;
-    protected String customer_phone;
-    protected String employee_id;
-    protected String employee_name;
-    protected String employee_phone;
+    protected Integer customerId;
+    protected String customerName;
+    protected String customerContact;
+    protected String customerPhone;
+    protected String employeeId;
+    protected String employeeName;
+    protected String employeePhone;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    protected LocalDateTime order_date;
+    protected LocalDateTime orderDate;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    protected LocalDateTime ship_date;
+    protected LocalDateTime shipDate;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    protected LocalDateTime arrival_date;
+    protected LocalDateTime arrivalDate;
     protected Float freight;
-    protected Integer shipper_id;
-    protected String shipper_name;
-    protected String shipper_phone;
-    protected String ship_address;
-    protected String ship_province;
-    protected String ship_city;
-    protected String ship_region;
+    protected Integer shipperId;
+    protected String shipperName;
+    protected String shipperPhone;
+    protected String shipAddress;
+    protected String shipProvince;
+    protected String shipCity;
+    protected String shipRegion;
     protected String contact;
-    protected List<OrderDetail> detail_list;
-    protected Double total_price;
+    protected List<OrderDetail> detailList;
+    protected Double totalPrice;
     public Order() {
     }
 
@@ -42,84 +42,84 @@ public class Order {
         this.id = id;
     }
 
-    public Integer getCustomer_id() {
-        return customer_id;
+    public Integer getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer_id(Integer customer_id) {
-        this.customer_id = customer_id;
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
-    public String getCustomer_name() {
-        return customer_name;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setCustomer_name(String customer_name) {
-        this.customer_name = customer_name;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
-    public String getCustomer_contact() {
-        return customer_contact;
+    public String getCustomerContact() {
+        return customerContact;
     }
 
-    public void setCustomer_contact(String customer_contact) {
-        this.customer_contact = customer_contact;
+    public void setCustomerContact(String customerContact) {
+        this.customerContact = customerContact;
     }
 
-    public String getCustomer_phone() {
-        return customer_phone;
+    public String getCustomerPhone() {
+        return customerPhone;
     }
 
-    public void setCustomer_phone(String customer_phone) {
-        this.customer_phone = customer_phone;
+    public void setCustomerPhone(String customerPhone) {
+        this.customerPhone = customerPhone;
     }
 
-    public String getEmployee_id() {
-        return employee_id;
+    public String getEmployeeId() {
+        return employeeId;
     }
 
-    public void setEmployee_id(String employee_id) {
-        this.employee_id = employee_id;
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
     }
 
-    public String getEmployee_name() {
-        return employee_name;
+    public String getEmployeeName() {
+        return employeeName;
     }
 
-    public void setEmployee_name(String employee_name) {
-        this.employee_name = employee_name;
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
     }
 
-    public String getEmployee_phone() {
-        return employee_phone;
+    public String getEmployeePhone() {
+        return employeePhone;
     }
 
-    public void setEmployee_phone(String employee_phone) {
-        this.employee_phone = employee_phone;
+    public void setEmployeePhone(String employeePhone) {
+        this.employeePhone = employeePhone;
     }
 
-    public LocalDateTime getOrder_date() {
-        return order_date;
+    public LocalDateTime getOrderDate() {
+        return orderDate;
     }
 
-    public void setOrder_date(LocalDateTime order_date) {
-        this.order_date = order_date;
+    public void setOrderDate(LocalDateTime orderDate) {
+        this.orderDate = orderDate;
     }
 
-    public LocalDateTime getShip_date() {
-        return ship_date;
+    public LocalDateTime getShipDate() {
+        return shipDate;
     }
 
-    public void setShip_date(LocalDateTime ship_date) {
-        this.ship_date = ship_date;
+    public void setShipDate(LocalDateTime shipDate) {
+        this.shipDate = shipDate;
     }
 
-    public LocalDateTime getArrival_date() {
-        return arrival_date;
+    public LocalDateTime getArrivalDate() {
+        return arrivalDate;
     }
 
-    public void setArrival_date(LocalDateTime arrival_date) {
-        this.arrival_date = arrival_date;
+    public void setArrivalDate(LocalDateTime arrivalDate) {
+        this.arrivalDate = arrivalDate;
     }
 
     public Float getFreight() {
@@ -130,60 +130,60 @@ public class Order {
         this.freight = freight;
     }
 
-    public Integer getShipper_id() {
-        return shipper_id;
+    public Integer getShipperId() {
+        return shipperId;
     }
 
-    public void setShipper_id(Integer shipper_id) {
-        this.shipper_id = shipper_id;
+    public void setShipperId(Integer shipperId) {
+        this.shipperId = shipperId;
     }
 
-    public String getShipper_name() {
-        return shipper_name;
+    public String getShipperName() {
+        return shipperName;
     }
 
-    public void setShipper_name(String shipper_name) {
-        this.shipper_name = shipper_name;
+    public void setShipperName(String shipperName) {
+        this.shipperName = shipperName;
     }
 
-    public String getShipper_phone() {
-        return shipper_phone;
+    public String getShipperPhone() {
+        return shipperPhone;
     }
 
-    public void setShipper_phone(String shipper_phone) {
-        this.shipper_phone = shipper_phone;
+    public void setShipperPhone(String shipperPhone) {
+        this.shipperPhone = shipperPhone;
     }
 
-    public String getShip_address() {
-        return ship_address;
+    public String getShipAddress() {
+        return shipAddress;
     }
 
-    public void setShip_address(String ship_address) {
-        this.ship_address = ship_address;
+    public void setShipAddress(String shipAddress) {
+        this.shipAddress = shipAddress;
     }
 
-    public String getShip_province() {
-        return ship_province;
+    public String getShipProvince() {
+        return shipProvince;
     }
 
-    public void setShip_province(String ship_province) {
-        this.ship_province = ship_province;
+    public void setShipProvince(String shipProvince) {
+        this.shipProvince = shipProvince;
     }
 
-    public String getShip_city() {
-        return ship_city;
+    public String getShipCity() {
+        return shipCity;
     }
 
-    public void setShip_city(String ship_city) {
-        this.ship_city = ship_city;
+    public void setShipCity(String shipCity) {
+        this.shipCity = shipCity;
     }
 
-    public String getShip_region() {
-        return ship_region;
+    public String getShipRegion() {
+        return shipRegion;
     }
 
-    public void setShip_region(String ship_region) {
-        this.ship_region = ship_region;
+    public void setShipRegion(String shipRegion) {
+        this.shipRegion = shipRegion;
     }
 
     public String getContact() {
@@ -194,47 +194,47 @@ public class Order {
         this.contact = contact;
     }
 
-    public List<OrderDetail> getDetail_list() {
-        return detail_list;
+    public List<OrderDetail> getDetailList() {
+        return detailList;
     }
 
-    public void setDetail_list(List<OrderDetail> detail_list) {
-        this.detail_list = detail_list;
+    public void setDetailList(List<OrderDetail> detailList) {
+        this.detailList = detailList;
     }
 
-    public Double getTotal_price() {
-        return total_price;
+    public Double getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setTotal_price(Double total_price) {
-        this.total_price = total_price;
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     @Override
     public String toString() {
         return "Order{" +
                 "id='" + id + '\'' +
-                ", customer_id=" + customer_id +
-                ", customer_name='" + customer_name + '\'' +
-                ", customer_contact='" + customer_contact + '\'' +
-                ", customer_phone='" + customer_phone + '\'' +
-                ", employee_id='" + employee_id + '\'' +
-                ", employee_name='" + employee_name + '\'' +
-                ", employee_phone='" + employee_phone + '\'' +
-                ", order_date=" + order_date +
-                ", ship_date=" + ship_date +
-                ", arrival_date=" + arrival_date +
+                ", customerId=" + customerId +
+                ", customerName='" + customerName + '\'' +
+                ", customerContact='" + customerContact + '\'' +
+                ", customerPhone='" + customerPhone + '\'' +
+                ", employeeId='" + employeeId + '\'' +
+                ", employeeName='" + employeeName + '\'' +
+                ", employeePhone='" + employeePhone + '\'' +
+                ", orderDate=" + orderDate +
+                ", shipDate=" + shipDate +
+                ", arrivalDate=" + arrivalDate +
                 ", freight=" + freight +
-                ", shipper_id=" + shipper_id +
-                ", shipper_name='" + shipper_name + '\'' +
-                ", shipper_phone='" + shipper_phone + '\'' +
-                ", ship_address='" + ship_address + '\'' +
-                ", ship_province='" + ship_province + '\'' +
-                ", ship_city='" + ship_city + '\'' +
-                ", ship_region='" + ship_region + '\'' +
+                ", shipperId=" + shipperId +
+                ", shipperName='" + shipperName + '\'' +
+                ", shipperPhone='" + shipperPhone + '\'' +
+                ", shipAddress='" + shipAddress + '\'' +
+                ", shipProvince='" + shipProvince + '\'' +
+                ", shipCity='" + shipCity + '\'' +
+                ", shipRegion='" + shipRegion + '\'' +
                 ", contact='" + contact + '\'' +
-                ", detail_list=" + detail_list +
-                ", total_price=" + total_price +
+                ", detailList=" + detailList +
+                ", totalPrice=" + totalPrice +
                 '}';
     }
 }

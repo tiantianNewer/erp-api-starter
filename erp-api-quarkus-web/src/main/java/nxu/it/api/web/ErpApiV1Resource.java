@@ -32,7 +32,7 @@ public class ErpApiV1Resource {
     @Inject
     CategoryService categoryService;
 
-    @Path("/author")
+    @Path("/authors")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public ApiResult<List<Author>> author() {
