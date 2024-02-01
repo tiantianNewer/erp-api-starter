@@ -7,9 +7,9 @@ import nxu.it.api.common.param.PageQueryParam;
 import java.time.LocalDateTime;
 @RegisterForReflection
 public class OrderPageQueryParam extends PageQueryParam {
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSSSSS")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     LocalDateTime startDate;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSSSSS")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     LocalDateTime endDate;
     String customerName;
     String shipperName;

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>账号登录</title>
+    <link href="../bootstrap-4.6.2-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../bootstrap-4.6.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .login-box {
+            width: 40%; /* 设置盒子宽度 */
+            padding: 20px; /* 设置内边距 */
+            border: 1px solid #ccc; /* 设置边框样式 */
+            margin: 10% auto;
+            background-color: rgba(209, 189, 171, 0.5); /* 设置盒子背景颜色 */
+        }
+
+        .login-box .item {
+            margin: 20px 0px;
+        }
+
+        body {
+            color: #333; /* 设置文本颜色 */
+        }
+    </style>
+</head>
+<body>
+<div class="login-box">
+    <h3>百货公司货物管理系统</h3>
+    <form method="post">
+        <div class="item">
+            <label for="username">用 户 名</label>
+            <input aria-describedby="emailHelp" class="form-control" id="username" type="email">
+            <small class="form-text text-muted" id="emailHelp">请妥善保管好个人账号！</small>
+        </div>
+        <div class="item">
+            <label for="password">密 码</label>
+            <input class="form-control" id="password" type="password">
+        </div>
+
+        <button class="btn btn-primary" href="home.html" type="submit">登 录</button>
+    </form>
+</div>
+
+<script src="../bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js"></script>
+<script src="../bootstrap-4.6.2-dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

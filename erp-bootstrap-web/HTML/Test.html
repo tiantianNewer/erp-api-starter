@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+</head>
+<body>
+
+<div id="productList"></div>
+
+<script>
+    // 模拟后端返回的数据
+    var responseData = {
+        "code": 200,
+        "success": true,
+        "message": "请求成功",
+        "data": [
+            {
+                "id": 129044,
+                "brand": "心相印",
+                "name": "厨房专用纸巾印花无香型",
+                "categoryId": "040106",
+                "barCode": "04010254",
+                "quantityPerUnit": "2卷装KT102",
+                "unitPrice": 10.9,
+                "unitsInStock": 191,
+                "unitsSell": 9,
+                "photo": "http://image.chijiayd.com:81/group1/M00/03/C9/rBJ8J1o8rjWAEeYlAAGUxSdokhg743.jpg",
+                "photoUrl": "129044.jpg"
+            },
+            {
+                "id": 130310,
+                "brand": "Laurier乐而雅",
+                "name": "零触感柔爽棉网超丝薄卫生巾量多日用",
+                "categoryId": "030501",
+                "barCode": "03070230",
+                "quantityPerUnit": "16片",
+                "unitPrice": 17.9,
+                "unitsInStock": 233,
+                "unitsSell": 17,
+                "photo": "http://image.chijiayd.com:81/group1/M00/02/30/rBJ8J1o8lyaAMejvAAO0yOQRJtc061.jpg",
+                "photoUrl": "130310.jpg"
+            }
+        ]
+    };
+
+    // 获取显示产品列表的容器
+    var productListContainer = document.getElementById("productList");
+
+    // 遍历每个产品并显示在页面上
+    responseData.data.forEach(function(product) {
+        // 创建一个 div 元素用于显示产品信息
+        var productDiv = document.createElement("div");
+        productDiv.innerHTML = "<p>ID: " + product.id + "</p>" +
+                              "<p>Name: " + product.name + "</p>" +
+                              "<p>Brand: " + product.brand + "</p>" +
+                              "<p>Price: " + product.unitPrice + "</p>";
+
+        // 将产品信息添加到产品列表容器中
+        productListContainer.appendChild(productDiv);
+    });
+</script>
+
+</body>
+</html>

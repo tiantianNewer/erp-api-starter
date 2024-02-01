@@ -1,0 +1,18 @@
+/*全局设置begin*/
+.container {
+    width: 80%;
+    border: 1px solid #ccc;
+    overflow-y: auto; /* 启用垂直滚动条 */
+}
+.top-main-container {
+    background-color: rgba(209, 208, 171, 0.5);
+}
+/*全局设置end*/
+/*查询板块begin*/
+.query-form .form-group {
+    margin-left: 10%;
+}
+.query-form button {
+    margin-left: 50%;
+}
+/*查询板块end*/

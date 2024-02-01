@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>主页</title>
+    <link href="../bootstrap-4.6.2-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../bootstrap-4.6.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../myCSS/all.css" rel="stylesheet">
+    <style>
+        body {
+            /* 设置文本颜色，以确保文字能够清晰可见 */
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron top-main-container">
+        <div class="clearfix">
+            <a class="btn text-muted float-right" href="#">退出登录</a>
+            <h1 class="display-4 float-left">X公司货物管理系统</h1>
+        </div>
+        <p class="lead">有以下功能模块：系统信息、订单查询、产品查询</p>
+        <hr class="my-4">
+        <p id="author-info">/*----作者信息---姓名: ----学号: ----年级: 级----班级: */</p>
+    </div>
+    <hr>
+    <ul class="nav nav-tabs">
+
+        <!-- 系统信息 -->
+        <li class="nav-item">
+            <a aria-controls="System-message" aria-expanded="false" class="nav-link active" data-toggle="collapse" href="#System-message"
+               role="button">系统信息</a>
+            <ul class="flex-column card collapse" id="System-message" style="width: 18rem;">
+                <li class="nav-item card-body">
+                    <h5 class="card-title">版本信息</h5>
+                    <p class="card-text">Version: V1.0 更新时间: 2024.1.29</p>
+                    <a class="btn btn-primary" href="#">敬请期待</a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- 产品数据查询 -->
+        <li class="nav-item">
+            <a aria-controls="Products" aria-expanded="false" class="nav-link active" data-toggle="collapse" href="#Products"
+               role="button">产品查询</a>
+            <ul class="flex-column card collapse" id="Products" style="width: 18rem;">
+                <li class="nav-item card-body">
+                    <h5 class="card-title">产品条件查询</h5>
+                    <p class="card-text">查询符合条件的产品信息</p>
+                    <a class="btn btn-primary" href="Product/productPage.html">查询</a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- 订单数据查询-->
+        <li class="nav-item">
+            <a aria-controls="Orders" aria-expanded="false" class="nav-link active" data-toggle="collapse" href="#Orders"
+               role="button">订单查询</a>
+            <ul class="flex-column card collapse" id="Orders" style="width: 18rem;">
+                <li class="nav-item card-body">
+                    <h5 class="card-title">订单条件查询</h5>
+                    <p class="card-text">查询符合条件的订单信息。</p>
+                    <a class="btn btn-primary" href="Order/orderPage.html">查询</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<script src="../bootstrap-4.6.2-dist/js/jquery-3.7.1.js"></script>
+<script src="../bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js"></script>
+<script src="../bootstrap-4.6.2-dist/js/bootstrap.bundle.js"></script>
+<script src="../bootstrap-4.6.2-dist/js/bootstrap.js"></script>
+<script>
+    // 使用Fetch API获取后端数据
+    fetch('http://localhost:8080/api/v1/author')
+        .then(response => response.json())
+        .then(data => {
+            // 更新HTML元素内容
+            const authorInfoElement = document.getElementById('author-info');
+            const authorData = data.data[0];
+
+            if (authorData) {
+                const authorInfo = `/*----作者信息---姓名: ${authorData.name}----学号: ${authorData.sno}----年级:${authorData.grade}级----班级:${authorData.klass}*/`;
+                authorInfoElement.textContent = authorInfo;
+            }
+        })
+        .catch(error => console.error('获取作者信息失败:', error));
+</script>
+
+</body>
+</html>

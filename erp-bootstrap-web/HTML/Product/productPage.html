@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>产品条件查询</title>
+    <link href="../../bootstrap-4.6.2-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../../bootstrap-4.6.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../myCSS/all.css" rel="stylesheet">
+    <style>
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+            /* 设置背景颜色并加上透明度 */
+            /* 替换为你需要的颜色值和透明度 */
+        }
+        .center-nav {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron top-main-container">
+        <h1 class="display-4">产品分页查询</h1>
+        <p class="lead">请通过下面的条件进行产品查询！</p>
+        <hr class="my-4">
+        <a class="btn btn-primary btn-lg" href="../home.html" role="button">返回主页</a>
+    </div>
+    <form class="query-form">
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputName">产品名称</label>
+                <input class="form-control" id="inputName" placeholder="(模糊查询)" type="text">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputBrand">品 牌</label>
+                <input class="form-control" id="inputBrand" placeholder="(模糊查询)" type="text">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputCategoryId">分类编号</label>
+                <input class="form-control" id="inputCategoryId" placeholder="例如:01、0101、010104" type="text">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputAvailable">是否仅包含有货产品</label>
+                <select class="form-control" id="inputAvailable">
+                    <option selected value="0">否</option>
+                    <option value="1">是</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputStartUnitPrice">单价范围(最低价)</label>
+                <input class="form-control" id="inputStartUnitPrice" placeholder="0.00~8000.00" type="text">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputEndUnitPrice">单价范围(最高价)</label>
+                <input class="form-control" id="inputEndUnitPrice" placeholder="0.00~8000.00" type="text">
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">查询</button>
+    </form>
+    <hr>
+    <!-- 查询结果 -->
+    <div class="clearfix" id="productListContainer" style="height: 60%;">
+        <ul class="list-unstyled" id="productList">
+            <!-- 产品列表项将会动态添加到这里 -->
+        </ul>
+    </div>
+    <hr>
+    <!-- 导航栏 -->
+    <div class="clearfix center-nav" id="paginationContainer" style="height: 4%;">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination" id="pagination">
+                <!-- 导航栏按钮将会动态添加到这里 -->
+            </ul>
+        </nav>
+    </div>
+
+</div>
+
+<script src="../../bootstrap-4.6.2-dist/js/jquery-3.7.1.js"></script>
+<script src="../../bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../bootstrap-4.6.2-dist/js/bootstrap.bundle.js"></script>
+<script src="../../bootstrap-4.6.2-dist/js/bootstrap.js"></script>
+<script>
+    // 更新产品列表
+    function updateProductList(data) {
+        var productList = $("#productList");
+
+        // 清空现有的列表内容
+        productList.empty();
+
+        // 遍历返回的数据，动态生成列表项
+        for (var i = 0; i < data.length; i++) {
+            var product = data[i];
+
+            // 创建列表项
+            var listItem = $("<li class='media-lg' >");
+
+            // 添加图片列
+            listItem.append("<div class='col-2'><img src='" + product.photoUrl + "' class='mr-3' alt='...' style='width: 64px; height: 64px;'></div>");
+
+            // 添加文字列
+            listItem.append("<div class='col-10 media-body'>");
+            listItem.append("<h5 class='mt-0 mb-1'>" + product.name + "</h5>");
+            listItem.append("<p>产品编号:" + product.id + ",品牌:" + product.brand + ",分类编号:" + product.categoryId + ",分类名称:" + product.categoryName + ",条形码:" + product.barCode + ",规格:" + product.quantityPerUnit + ",单价:" + product.unitPrice + ",库存:" + product.unitsInStock + ",销量:" + product.unitsSell + "</p>");
+            listItem.append("<hr>");
+            listItem.append("</div>");
+
+            // 将列表项添加到产品列表
+            productList.append(listItem);
+        }
+    }
+
+    // 更新导航栏
+    function updatePagination(pageNumber, totalPage) {
+        var pagination = $("#pagination");
+
+        // 清空现有的导航栏内容
+        pagination.empty();
+
+        // 添加上一页按钮
+        if (pageNumber > 1) {
+            pagination.append("<li class='page-item' id='prevPage'><a class='page-link' href='#' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>");
+        } else {
+            pagination.append("<li class='page-item disabled'><span class='page-link' aria-hidden='true'>&laquo;</span></li>");
+        }
+        // 添加当前页按钮
+        pagination.append("<li class='page-item active'><a class='page-link' href='#'>" + pageNumber + "</a></li>");
+
+        // 添加下一页按钮
+        if (pageNumber < totalPage) {
+            pagination.append("<li class='page-item' id='nextPage'><a class='page-link' href='#' aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>");
+        } else {
+            pagination.append("<li class='page-item disabled'><span class='page-link' aria-hidden='true'>&raquo;</span></li>");
+        }
+        // 绑定上一页和下一页按钮的点击事件
+        $("#prevPage").click(function () {
+            handlePageChange(pageNumber - 1);
+        });
+
+        $("#nextPage").click(function () {
+            handlePageChange(pageNumber + 1);
+        });
+        // 绑定页码按钮的点击事件
+        bindPageClickEvent(totalPage);
+    }
+
+    // 处理页面变化逻辑
+    function handlePageChange(newPage) {
+        // 在这里处理页面变化的逻辑
+        fetchDataAndRender(newPage);
+    }
+
+    // 绑定页码按钮的点击事件
+    function bindPageClickEvent(totalPage) {
+        // 为每个页码按钮添加点击事件
+        for (var i = 1; i <= totalPage; i++) {
+            $("#page" + i).click(function () {
+                // 在这里处理点击页码按钮的逻辑
+                var clickedPage = $(this).text();  // 获取点击的页码
+                fetchDataAndRender(clickedPage);
+            });
+        }
+    }
+
+    // 发起POST请求并更新页面
+    function fetchDataAndRender(pageNumber) {
+        var name = $("#inputName").val();
+        var brand = $("#inputBrand").val();
+        var categoryId = $("#inputCategoryId").val();
+        var available = $("#inputAvailable").val();
+        var startUnitPrice = $("#inputStartUnitPrice").val();
+        var endUnitPrice = $("#inputEndUnitPrice").val();
+
+        var requestData = {
+            name: name,
+            brand: brand,
+            categoryId: categoryId,
+            available: available,
+            startUnitPrice: startUnitPrice,
+            endUnitPrice: endUnitPrice,
+            pageNumber: pageNumber  // 添加页码信息
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/api/v1/products",
+            contentType: "application/json",
+            data: JSON.stringify(requestData),
+            success: function (response) {
+                console.log("成功响应:", response);
+
+                // 更新产品列表和导航栏
+                updateProductList(response.data);
+                updatePagination(response.pageNumber, response.totalPage);
+            },
+            error: function (error) {
+                console.error("错误响应:", error);
+            }
+        });
+    }
+
+    // 在文档加载完成后调用，发起POST请求并更新页面
+    $(document).ready(function () {
+        // 监听表单提交事件
+        $("form").submit(function (event) {
+            // 阻止表单默认提交行为
+            event.preventDefault();
+
+            // 获取表单中的各个输入字段的值
+            var name = $("#inputName").val();
+            var brand = $("#inputBrand").val();
+            var categoryId = $("#inputCategoryId").val();
+            var availableProducts = $("#inputAvailable").val();
+            var startUnitPrice = $("#inputStartUnitPrice").val();
+            var endUnitPrice = $("#inputEndUnitPrice").val();
+            var pageNumber = 1;
+            // 构建请求参数对象
+            var requestData = {
+                name: name,
+                brand: brand,
+                categoryId: categoryId,
+                availableProducts: availableProducts,
+                startUnitPrice: startUnitPrice,
+                endUnitPrice: endUnitPrice,
+                pageNumber: pageNumber
+            };
+
+            // 发起POST请求
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:8080/api/v1/products",
+                contentType: "application/json",
+                data: JSON.stringify(requestData),
+                success: function (response) {
+                    // 处理成功响应
+                    console.log("成功响应:", response);
+
+                    // 更新产品列表和导航栏
+                    updateProductList(response.data);
+                    updatePagination(response.pageNumber, response.totalPage);
+                },
+                error: function (error) {
+                    // 处理错误响应
+                    console.error("错误响应:", error);
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
