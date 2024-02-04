@@ -1,4 +1,4 @@
-SELECT tpr.id, tpr.name, tpr.brand, tpr.bar_code, tpr.quantity_per_unit, tpr.unit_price, tpr.units_in_stock, tpr.units_sell, tpr.photo_url,
+SELECT tpr.id, tpr.name, tpr.brand, tpr.bar_code, tpr.quantity_per_unit, tpr.unit_price, tpr.units_in_stock, tpr.units_sell, tpr.photo,
        tsu.id AS supplier_id, tsu.name AS supplier_name,
        t3.id AS category_id3, t3.name AS category_name3, t2.id AS category_id2,  t2.name AS category_name2, t1.id AS category_id1, t1.name AS category_name1
 FROM t_product tpr

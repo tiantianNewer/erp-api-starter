@@ -1,7 +1,6 @@
 package nxu.it.api.service.mongo.entity;
 
-import org.bson.BsonType;
-import org.bson.codecs.pojo.annotations.BsonRepresentation;
+import org.bson.types.Decimal128;
 
 public class ProductEntity {
     protected Integer id;
@@ -9,17 +8,16 @@ public class ProductEntity {
     protected String name;
     protected String barCode;
     protected String quantityPerUnit;
-    @BsonRepresentation(BsonType.DECIMAL128)
-    protected Double unitPrice;
+    protected Decimal128 unitPrice;
     protected Long unitsInStock;
     protected Integer unitsSell;
-    protected String photoUrl;
+    protected String photo;
 
-    protected SupplierEntity supplierEntity;
+    protected SimpleSupplierEntity simpleSupplierEntity;
 
-    protected CategoryEntity level1;
-    protected CategoryEntity level2;
-    protected CategoryEntity level3;
+    protected SimpleCategoryEntity level1;
+    protected SimpleCategoryEntity level2;
+    protected SimpleCategoryEntity level3;
 
     public Integer getId() {
         return id;
@@ -61,11 +59,11 @@ public class ProductEntity {
         this.quantityPerUnit = quantityPerUnit;
     }
 
-    public Double getUnitPrice() {
+    public Decimal128 getUnitPrice() {
         return unitPrice;
     }
 
-    public void setUnitPrice(Double unitPrice) {
+    public void setUnitPrice(Decimal128 unitPrice) {
         this.unitPrice = unitPrice;
     }
 
@@ -85,43 +83,43 @@ public class ProductEntity {
         this.unitsSell = unitsSell;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
+    public String getPhoto() {
+        return photo;
     }
 
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
-    public SupplierEntity getSupplierEntity() {
-        return supplierEntity;
+    public SimpleSupplierEntity getSimpleSupplierEntity() {
+        return simpleSupplierEntity;
     }
 
-    public void setSupplierEntity(SupplierEntity supplierEntity) {
-        this.supplierEntity = supplierEntity;
+    public void setSimpleSupplierEntity(SimpleSupplierEntity simpleSupplierEntity) {
+        this.simpleSupplierEntity = simpleSupplierEntity;
     }
 
-    public CategoryEntity getLevel1() {
+    public SimpleCategoryEntity getLevel1() {
         return level1;
     }
 
-    public void setLevel1(CategoryEntity level1) {
+    public void setLevel1(SimpleCategoryEntity level1) {
         this.level1 = level1;
     }
 
-    public CategoryEntity getLevel2() {
+    public SimpleCategoryEntity getLevel2() {
         return level2;
     }
 
-    public void setLevel2(CategoryEntity level2) {
+    public void setLevel2(SimpleCategoryEntity level2) {
         this.level2 = level2;
     }
 
-    public CategoryEntity getLevel3() {
+    public SimpleCategoryEntity getLevel3() {
         return level3;
     }
 
-    public void setLevel3(CategoryEntity level3) {
+    public void setLevel3(SimpleCategoryEntity level3) {
         this.level3 = level3;
     }
 }

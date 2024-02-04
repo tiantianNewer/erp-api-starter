@@ -1,7 +1,8 @@
 package nxu.it.api.service.mongo.entity;
 
-public class SupplierEntity {
+public class SimpleCategoryEntity {
     protected Integer id;
+    protected Integer level;
     protected String name;
 
     public Integer getId() {
@@ -10,6 +11,14 @@ public class SupplierEntity {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
     }
 
     public String getName() {

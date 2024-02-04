@@ -1,4 +1,3 @@
-/*
 package nxu.it.api.service.mongo;
 
 import io.quarkus.test.junit.QuarkusTest;
@@ -65,4 +64,3 @@ public class ProductTest {
         System.out.println(purchasePageable.getList());
     }
 }
-*/

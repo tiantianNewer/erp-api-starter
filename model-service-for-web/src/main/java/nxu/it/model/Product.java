@@ -9,7 +9,7 @@ public class Product {
     protected Float unitPrice;
     protected Long unitsInStock;
     protected Integer unitsSell;
-    protected String photoUrl;
+    protected String photo;
     protected Integer purchaseUnitPrice;
     protected Integer purchaseAmount;
     protected Long supplierId;
@@ -88,12 +88,12 @@ public class Product {
         this.unitsSell = unitsSell;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
+    public String getPhoto() {
+        return photo;
     }
 
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public Integer getPurchaseUnitPrice() {
@@ -187,7 +187,7 @@ public class Product {
                 ", unitPrice=" + unitPrice +
                 ", unitsInStock=" + unitsInStock +
                 ", unitsSell=" + unitsSell +
-                ", photoUrl='" + photoUrl + '\'' +
+                ", photo='" + photo + '\'' +
                 ", purchaseUnitPrice=" + purchaseUnitPrice +
                 ", purchaseAmount=" + purchaseAmount +
                 ", supplierId=" + supplierId +

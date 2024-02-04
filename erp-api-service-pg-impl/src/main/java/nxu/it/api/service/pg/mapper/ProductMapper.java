@@ -12,7 +12,7 @@ import java.util.List;
 @Mapper(componentModel = MappingConstants.ComponentModel.CDI)
 public interface ProductMapper {
 
-    @Mapping(source = "quantity_per_unit", target = "quantityPerUnit")
+//    @Mapping(source = "quantity_per_unit", target = "quantityPerUnit")
     Product toProduct(ProductEntity productEntity);
 
     List<Product> toProductList(List<ProductEntity> productEntityList);

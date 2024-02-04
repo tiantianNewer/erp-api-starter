@@ -13,7 +13,7 @@ public class ProductEntity {
     protected Float unitPrice;
     protected Long unitsInStock;
     protected Integer unitsSell;
-    protected String photoUrl;
+    protected String photo;
     protected Integer purchaseUnitPrice;
     protected Integer purchaseAmount;
     protected Long supplierId;
@@ -89,12 +89,20 @@ public class ProductEntity {
         this.unitsSell = unitsSell;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
+    public String getQuantityPerUnit() {
+        return quantityPerUnit;
     }
 
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
+    public void setQuantityPerUnit(String quantityPerUnit) {
+        this.quantityPerUnit = quantityPerUnit;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public Integer getPurchaseUnitPrice() {
