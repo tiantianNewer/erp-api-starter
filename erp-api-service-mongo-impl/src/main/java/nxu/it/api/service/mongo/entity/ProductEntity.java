@@ -2,6 +2,8 @@ package nxu.it.api.service.mongo.entity;
 
 import org.bson.types.Decimal128;
 
+import java.util.List;
+
 public class ProductEntity {
     protected Integer id;
     protected String brand;
@@ -13,11 +15,9 @@ public class ProductEntity {
     protected Integer unitsSell;
     protected String photo;
 
-    protected SimpleSupplierEntity simpleSupplierEntity;
+    protected List<SimpleSupplierEntity> suppliers;
 
-    protected SimpleCategoryEntity level1;
-    protected SimpleCategoryEntity level2;
-    protected SimpleCategoryEntity level3;
+    protected CategoriesOfProduct category;
 
     public Integer getId() {
         return id;
@@ -91,35 +91,19 @@ public class ProductEntity {
         this.photo = photo;
     }
 
-    public SimpleSupplierEntity getSimpleSupplierEntity() {
-        return simpleSupplierEntity;
+    public List<SimpleSupplierEntity> getSuppliers() {
+        return suppliers;
     }
 
-    public void setSimpleSupplierEntity(SimpleSupplierEntity simpleSupplierEntity) {
-        this.simpleSupplierEntity = simpleSupplierEntity;
+    public void setSuppliers(List<SimpleSupplierEntity> suppliers) {
+        this.suppliers = suppliers;
     }
 
-    public SimpleCategoryEntity getLevel1() {
-        return level1;
+    public CategoriesOfProduct getCategory() {
+        return category;
     }
 
-    public void setLevel1(SimpleCategoryEntity level1) {
-        this.level1 = level1;
-    }
-
-    public SimpleCategoryEntity getLevel2() {
-        return level2;
-    }
-
-    public void setLevel2(SimpleCategoryEntity level2) {
-        this.level2 = level2;
-    }
-
-    public SimpleCategoryEntity getLevel3() {
-        return level3;
-    }
-
-    public void setLevel3(SimpleCategoryEntity level3) {
-        this.level3 = level3;
+    public void setCategory(CategoriesOfProduct category) {
+        this.category = category;
     }
 }

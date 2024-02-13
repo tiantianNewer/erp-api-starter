@@ -10,6 +10,6 @@ public class MongoDbFactory {
     @ApplicationScoped
     @Produces
     public MongoDatabase getDatabase(MongoClient mongoClient){
-        return mongoClient.getDatabase("movie_api");
+        return mongoClient.getDatabase("erp_api");
     }
 }

@@ -1,9 +1,7 @@
-/*
 package nxu.it.api.service.mongo;
 
 import io.quarkus.test.junit.QuarkusTest;
 import nxu.it.api.common.result.Pageable;
-import nxu.it.api.service.pg.OrderServicePgImpl;
 import nxu.it.model.Order;
 import nxu.it.model.OrderPageQueryParam;
 import org.junit.jupiter.api.Test;
@@ -16,12 +14,12 @@ import java.time.LocalTime;
 @QuarkusTest
 public class OrderTest {
     @Inject
-    OrderServicePgImpl orderServicePg;
+    OrderServiceMongoImpl orderServiceMongo;
 
     @Test
     void test_find_by_order_id() {
         String orderId = "202001190001";
-        System.out.println(orderServicePg.findByOrderId(orderId));
+        System.out.println(orderServiceMongo.findByOrderId(orderId));
     }
     @Test
     void test_page() {
@@ -35,7 +33,7 @@ public class OrderTest {
         orderPageQueryParam.setShipperName("圆通速递");
         orderPageQueryParam.setShipProvince("广东");
 
-        Pageable<Order> orderPageable = orderServicePg.page(orderPageQueryParam);
+        Pageable<Order> orderPageable = orderServiceMongo.page(orderPageQueryParam);
         System.out.println(orderPageable.getList());
     }
 
@@ -48,7 +46,7 @@ public class OrderTest {
         String employeeId = "2017001";
         orderPageQueryParam.setShipCity("七台河");
 
-        Pageable<Order> orderPageable = orderServicePg.pageByEmployeeId(employeeId, orderPageQueryParam);
+        Pageable<Order> orderPageable = orderServiceMongo.pageByEmployeeId(employeeId, orderPageQueryParam);
         System.out.println(orderPageable.getList());
     }
 
@@ -61,7 +59,7 @@ public class OrderTest {
         int customerId = 78;
         orderPageQueryParam.setShipRegion("华");
 
-        Pageable<Order> orderPageable = orderServicePg.pageByCustomerId(customerId, orderPageQueryParam);
+        Pageable<Order> orderPageable = orderServiceMongo.pageByCustomerId(customerId, orderPageQueryParam);
         System.out.println(orderPageable.getList());
     }
 
@@ -75,8 +73,7 @@ public class OrderTest {
         orderPageQueryParam.setShipCity("北京");
         orderPageQueryParam.setEmployeeName("曹");
 
-        Pageable<Order> orderPageable = orderServicePg.pageByShipperId(shipperId, orderPageQueryParam);
+        Pageable<Order> orderPageable = orderServiceMongo.pageByShipperId(shipperId, orderPageQueryParam);
         System.out.println(orderPageable.getList());
     }
 }
-*/

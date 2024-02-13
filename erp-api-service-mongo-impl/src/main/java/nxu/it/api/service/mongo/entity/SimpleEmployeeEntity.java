@@ -2,17 +2,17 @@ package nxu.it.api.service.mongo.entity;
 
 import org.bson.codecs.pojo.annotations.BsonProperty;
 
-public class SimpleProductEntity {
+public class SimpleEmployeeEntity {
     @BsonProperty("id")
-    protected Integer id;
+    protected String id;
     protected String name;
-    protected String quantityPerUnit;
+    protected String phone;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -24,11 +24,11 @@ public class SimpleProductEntity {
         this.name = name;
     }
 
-    public String getQuantityPerUnit() {
-        return quantityPerUnit;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setQuantityPerUnit(String quantityPerUnit) {
-        this.quantityPerUnit = quantityPerUnit;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

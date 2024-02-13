@@ -29,7 +29,7 @@ public class ProductTest {
 
         productPageQueryParam.setName("水");
         productPageQueryParam.setBrand("农");
-//        productPageQueryParam.setCategoryId("01");
+//        productPageQueryParam.setCategoryId("02");
 //        productPageQueryParam.setMinPrice((float)10.0);
 //        productPageQueryParam.setMaxPrice((float)50.0);
 //        productPageQueryParam.setHaveProduct(true);

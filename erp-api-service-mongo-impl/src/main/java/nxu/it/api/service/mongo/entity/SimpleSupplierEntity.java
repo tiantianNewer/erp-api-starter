@@ -1,6 +1,9 @@
 package nxu.it.api.service.mongo.entity;
 
+import org.bson.codecs.pojo.annotations.BsonProperty;
+
 public class SimpleSupplierEntity {
+    @BsonProperty("id")
     protected Integer id;
     protected String name;
 

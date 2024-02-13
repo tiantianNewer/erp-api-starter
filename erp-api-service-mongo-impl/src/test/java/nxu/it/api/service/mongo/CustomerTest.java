@@ -1,9 +1,7 @@
-/*
 package nxu.it.api.service.mongo;
 
 import io.quarkus.test.junit.QuarkusTest;
 import nxu.it.api.common.result.Pageable;
-import nxu.it.api.service.pg.CustomerServicePgImpl;
 import nxu.it.model.Customer;
 import nxu.it.model.CustomerPageQueryParam;
 import org.junit.jupiter.api.Test;
@@ -13,7 +11,7 @@ import javax.inject.Inject;
 @QuarkusTest
 public class CustomerTest {
     @Inject
-    CustomerServicePgImpl customerServicePg;
+    CustomerServiceMongoImpl customerServiceMongo;
 
     @Test
     void test_page() {
@@ -26,8 +24,7 @@ public class CustomerTest {
 //        customerPageQueryParam.setProvince("东");
         customerPageQueryParam.setCity("广");
 
-        Pageable<Customer> customerPageable = customerServicePg.page(customerPageQueryParam);
+        Pageable<Customer> customerPageable = customerServiceMongo.page(customerPageQueryParam);
         System.out.println(customerPageable.getList());
     }
 }
-*/

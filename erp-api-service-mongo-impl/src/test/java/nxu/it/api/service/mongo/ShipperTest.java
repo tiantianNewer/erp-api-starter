@@ -1,9 +1,7 @@
-/*
 package nxu.it.api.service.mongo;
 
 import io.quarkus.test.junit.QuarkusTest;
 import nxu.it.api.common.result.Pageable;
-import nxu.it.api.service.pg.ShipperServicePgImpl;
 import nxu.it.model.Shipper;
 import nxu.it.model.ShipperPageQueryParam;
 import org.junit.jupiter.api.Test;
@@ -13,7 +11,7 @@ import javax.inject.Inject;
 @QuarkusTest
 public class ShipperTest {
     @Inject
-    ShipperServicePgImpl shipperServicePg;
+    ShipperServiceMongoImpl shipperServiceMongo;
 
     @Test
     void test_page() {
@@ -23,8 +21,7 @@ public class ShipperTest {
 
         shipperPageQueryParam.setName("快");
 
-        Pageable<Shipper> shipperPageable = shipperServicePg.page(shipperPageQueryParam);
+        Pageable<Shipper> shipperPageable = shipperServiceMongo.page(shipperPageQueryParam);
         System.out.println(shipperPageable.getList());
     }
 }
-*/
